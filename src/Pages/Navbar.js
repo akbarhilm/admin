@@ -150,73 +150,111 @@ class Navbar extends Component {
     const menu = staterex.auth.menu
     console.log(menu)
 
-    const drawer = (
-      <div>
-        <div className={classes.toolbar} />
-        <Divider />
-        <List  className={classes.navbarMenu}>
-          {menu.map((me) => (
-                me.idInduk !== "-"?
-              <ListItem button key={me.id} component={Link} to={me.link}>
-                 {/* <ListItemIcon><MailIcon /></ListItemIcon>  */}
-                 <ListItemText primary={me.nama}/>
-               </ListItem>
-               :null
+    // const drawer = (
+    //   <div>
+    //     <div className={classes.toolbar} />
+    //     <Divider />
+    //     <List  className={classes.navbarMenu}>
+    //       {menu.map((me) => (
+    //             me.idInduk !== "-"?
+    //           <ListItem button key={me.id} component={Link} to={me.link}>
+    //              {/* <ListItemIcon><MailIcon /></ListItemIcon>  */}
+    //              <ListItemText primary={me.nama}/>
+    //            </ListItem>
+    //            :null
             
               
-          )
-          )}
-        </List>
-         {/* {menu.map((me) => {
-            return (
-              <Typography variant="body1" className={classes.navbarMenu}>
-                <Link to="/menu" >{me.nama}</Link>
-              </Typography>
-            )
-          })} */}
-        <Divider />
+    //       )
+    //       )}
+    //     </List>
+    //      {/* {menu.map((me) => {
+    //         return (
+    //           <Typography variant="body1" className={classes.navbarMenu}>
+    //             <Link to="/menu" >{me.nama}</Link>
+    //           </Typography>
+    //         )
+    //       })} */}
+    //     <Divider />
         
-      </div>
-    );
+    //   </div>
+    // );
 
-          const expansion = (
-          <div>
-            {menu.map((me) => (
-              me.idInduk === "-"?
-            <ExpansionPanel>
-        <ExpansionPanelSummary
-          expandIcon={<ExpandMoreIcon />}
-          aria-controls="panel1a-content"
-          id="panel1a-header"
-        >
-          <Typography className={classes.heading}>{me.nama}</Typography>
-        </ExpansionPanelSummary>
-        <ExpansionPanelDetails>
-        <List  className={classes.navbarMenu}>
-          {console.log(menu.link)}
-          {menu.map((me2) => (
+   
+
+      //     const expansion = (
+      //     <div>
+      //       {menu.map((me) => (
+      //         me.idInduk === "-"?
+      //       <ExpansionPanel>
+      //   <ExpansionPanelSummary
+      //     expandIcon={<ExpandMoreIcon />}
+      //     aria-controls="panel1a-content"
+      //     id="panel1a-header"
+      //   >
+      //     <Typography className={classes.heading}>{me.nama}</Typography>
+      //   </ExpansionPanelSummary>
+      //   <ExpansionPanelDetails>
+      //   <List  className={classes.navbarMenu}>
+      //     {console.log(menu.link)}
+      //     {menu.map((me2) => (
           
-                me2.idInduk !== "-" && me2.idInduk === me.id?
+      //           me2.idInduk !== "-" && me2.idInduk === me.id?
                 
-              <ListItem button key={me2.id} component={Link} to={`${me2.link}`}>
-                 {/* <ListItemIcon><MailIcon /></ListItemIcon>  */}
-                 <ListItemText primary={me2.nama}/>
-               </ListItem>
+      //         <ListItem button key={me2.id} component={Link} to={`${me2.link}`}>
+      //            {/* <ListItemIcon><MailIcon /></ListItemIcon>  */}
+      //            <ListItemText primary={me2.nama}/>
+      //          </ListItem>
            
-               :null
+      //          :null
             
               
-          )
+      //     )
           
-          ) }
-        </List>
-        </ExpansionPanelDetails>
-      </ExpansionPanel>
-        : null
-            )
-            )}
-      </div>
-          )
+      //     ) }
+      //   </List>
+      //   </ExpansionPanelDetails>
+      // </ExpansionPanel>
+      //   : null
+      //       )
+      //       )}
+      // </div>
+      //     )
+
+      const expansion = (
+        <div>
+          
+          <ExpansionPanel>
+      <ExpansionPanelSummary
+        expandIcon={<ExpandMoreIcon />}
+        aria-controls="panel1a-content"
+        id="panel1a-header"
+      >
+        <Typography className={classes.heading}>Pengguna</Typography>
+      </ExpansionPanelSummary>
+      <ExpansionPanelDetails>
+      <List  className={classes.navbarMenu}>
+        
+            {['ListPengguna','Tambah'].map((text,index)=>( 
+            <ListItem button key={index} component={Link} to={text}>
+               {/* <ListItemIcon><MailIcon /></ListItemIcon>  */}
+               <ListItemText primary={text}/>
+             </ListItem>
+            ))}
+         
+             
+          
+            
+        
+        
+        
+      </List>
+      </ExpansionPanelDetails>
+    </ExpansionPanel>
+     
+          
+          
+    </div>
+        )
 
 
     return (
@@ -301,7 +339,7 @@ class Navbar extends Component {
                 }}
                
               >
-                {drawer}
+                {/* {drawer} */}
               </Drawer>
             </Hidden>
             <Hidden xsDown implementation="css">

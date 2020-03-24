@@ -6,6 +6,10 @@ import axios from "axios";
 import Cookies from 'universal-cookie'
 import Main from './Pages/Main';
 import Menu from './Pages/Menu';
+import TambahPengguna from './Pages/pengguna/TambahPengunna'
+import OtoApps from './Pages/pengguna/OtoApps'
+import IndexPengguna from './Pages/pengguna/IndexPengguna';
+import EditPengunna from './Pages/pengguna/EditPengunna';
 
 
 
@@ -33,13 +37,17 @@ componentWillMount(){
           <Provider store={store}>
     <Router>
     <Route exact path="/" render={(props) => <Main/>}/>  
-    {menu.map((me)=>(
+    {/* {menu.map((me)=>(
       me.idInduk !== "-"?
       <Route exact path={me.link} component={me.link}/>
       :null
 
     )
-    )}
+    )} */}
+    <Route exact path="/ListPengguna" component={IndexPengguna}/>
+    <Route exact path="/Edit/:id" component={EditPengunna}/>
+    <Route exact path="/Tambah" component={TambahPengguna}/>  
+    <Route exact path="/otoapps" component={OtoApps}/> 
     </Router>
       </Provider>
 
