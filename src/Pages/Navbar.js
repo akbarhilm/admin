@@ -229,12 +229,12 @@ class Navbar extends Component {
         aria-controls="panel1a-content"
         id="panel1a-header"
       >
-        <Typography className={classes.heading}>Pengguna</Typography>
+        <Typography className={classes.heading}>Aplikasi</Typography>
       </ExpansionPanelSummary>
       <ExpansionPanelDetails>
       <List  className={classes.navbarMenu}>
         
-            {['ListPengguna','Tambah'].map((text,index)=>( 
+            {['List_App','Tambah_App'].map((text,index)=>( 
             <ListItem button key={index} component={Link} to={text}>
                {/* <ListItemIcon><MailIcon /></ListItemIcon>  */}
                <ListItemText primary={text}/>

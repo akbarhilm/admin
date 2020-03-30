@@ -5,3 +5,4 @@ export const SET_USER_APP = "SET_USER_APP";
 export const SET_USER_MENU_APP = "SET_USER_MENU_APP";
 
 export const SAVE_USER = "SAVE_USER";
+export const SAVE_APP = "SAVE_APP";
