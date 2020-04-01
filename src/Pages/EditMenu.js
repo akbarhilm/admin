@@ -37,7 +37,7 @@ class Menu extends Component{
                 <Navbar/>
                 <div className={classes.contentRoot}>
                 <div className={classes.content}>
-                    Tambah Menu
+                    Edit Menu
                     <form>
                         <label>Nama Menu :</label>
                         <input type='text'/><br/>

@@ -6,6 +6,7 @@ import axios from "axios";
 import Cookies from 'universal-cookie'
 import Main from './Pages/Main';
 import Menu from './Pages/Menu';
+import EditMenu from './Pages/EditMenu';
 
 
 
@@ -33,6 +34,8 @@ componentWillMount(){
           <Provider store={store}>
     <Router>
     <Route exact path="/" render={(props) => <Main/>}/>  
+    <Route exact path="/Menu" render={(props) => <Menu/>}/> 
+    <Route exact path="/EditMenu" render={(props) => <EditMenu/>}/> 
     {menu.map((me)=>(
       me.idInduk !== "-"?
       <Route exact path={me.link} component={me.link}/>
